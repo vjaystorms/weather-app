@@ -59,7 +59,7 @@ export function WeatherForecast({ data }: WeatherForecastProps) {
           {nextDays.map((day) => (
             <div
               key={day.date}
-              className="grid grid-cols-3 items-center gap-4 rounded-lg border p-4"
+              className="grid grid-cols-[1fr_2fr] items-center gap-4 rounded-lg border p-4"
             >
               <div>
                 <p className="font-medium">
@@ -69,8 +69,9 @@ export function WeatherForecast({ data }: WeatherForecastProps) {
                   {day.weather.description}
                 </p>
               </div>
+              <div className="grid grid-cols-1 items-center gap-2 lg:grid-cols-2">
 
-              <div className="flex justify-center gap-4">
+              <div className="flex justify-end gap-4">
                 <span className="flex items-center text-blue-500">
                   <ArrowDown className="mr-1 h-4 w-4" />
                   {formatTemp(day.temp_min)}
@@ -91,6 +92,7 @@ export function WeatherForecast({ data }: WeatherForecastProps) {
                   <span className="text-sm">{day.wind}m/s</span>
                 </span>
               </div>
+                            </div>
             </div>
           ))}
         </div>
